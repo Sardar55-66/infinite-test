@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import avatar from '../assets/main-user.png'
 import './userDetails.scss'
 import { userSlice } from "../store/userSlice";
+import { RootState } from "../store/store";
 
 const UserDetails = () => {
-    const selectedUser = useSelector((state) => state.users.selectedUser);
+    const selectedUser = useSelector((state: RootState) => state.users.selectedUser);
     const dispatch = useDispatch();
     const [form, setForm] = useState({ name: "", department: "", company: "", jobTitle: "" });
 
@@ -23,7 +24,7 @@ const UserDetails = () => {
 
   if (!selectedUser) return <div className="details-unselected">Выберите пользователя</div>;
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,

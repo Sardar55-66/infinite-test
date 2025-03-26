@@ -9,15 +9,13 @@ const UserList = () => {
   const users = useSelector((state: RootState) => state.users.users);
   const dispatch = useDispatch();
 
-  console.log("users:", users); // 🔥 Проверяем, загружаются ли пользователи
-
   if (!users || users.length === 0) {
     return <div>Загрузка пользователей...</div>;
   }
 
   const Row = ({ index, style }: ListChildComponentProps) => (
     <div
-      style={{ ...style, padding: "10px", cursor: "pointer" }}
+      style={{ ...style}}
       className="user-item"
       onClick={() => dispatch(userSlice.actions.selectUser(users[index]))}
     >
@@ -28,7 +26,7 @@ const UserList = () => {
 
   return (
     <List
-      height={400}
+      height={600}
       itemCount={users.length}
       itemSize={40}
       width={200}

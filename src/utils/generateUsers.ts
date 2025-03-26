@@ -2,10 +2,11 @@
 export interface User {
   id: number;
   name: string;
-  department: string;
-  company: string;
-  jobTitle: string;
+  department: string | null;
+  company: string | null;
+  jobTitle: string | null;
 }
+
 
 const generateUsers = (num: number): User[] => {
   return Array.from({ length: num }, (_, i) => ({

@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import UserList from './components/UserList';
 import UserDetails from './components/UserDetails';
 
