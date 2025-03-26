@@ -1,0 +1,9 @@
+#root {
+  padding: 2rem;
+}
+.container {
+  width: 90vw;
+  display: flex;
+  height: 100%;
+  border: 1px solid #000;
+}
